@@ -16,5 +16,5 @@ pip install mkdocs
 #execute_process(COMMAND doxygen WORKING_DIRECTORY ../StratifyOS)
 #execute_process(COMMAND doxygen WORKING_DIRECTORY ../StratifyAPI)
 
-execute_process(COMMAND moxygen --anchors --groups --templates templates/moxygen/cpp --output docs/StratifyOS/%s.md StratifyOS/xml)
-#execute_process(COMMAND moxygen --anchors --templates templates/moxygen/cpp --output docs/StratifyAPI.md StratifyAPI/xml)
+#execute_process(COMMAND moxygen --anchors --groups --templates templates/moxygen/cpp --output docs/StratifyOS/%s.md StratifyOS/xml)
+execute_process(COMMAND moxygen --html-anchors --templates templates/moxygen/cpp --output docs/StratifyAPI.md StratifyAPI/xml)

@@ -1,3 +1,5 @@
+{{anchor refid}}
+
 ## {{name}}
 
 {{detaileddescription}}
@@ -15,6 +17,8 @@
 ### Members
 
 {{#each filtered.members}}
+{{anchor refid}}
+
 #### {{title proto}}
 
 {{#if enumvalue}}

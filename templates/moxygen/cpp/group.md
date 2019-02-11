@@ -1,4 +1,6 @@
-## {{kind}} `{{name}}`
+{{anchor refid}}
+
+## {{kind}} `{{name}}` 
 
 {{detaileddescription}}
 
@@ -15,7 +17,9 @@
 ### Members
 
 {{#each filtered.compounds}}
-#### {{title proto}}
+{{anchor refid}}
+
+#### {{title proto}} 
 
 {{detaileddescription}}
 
@@ -24,6 +28,8 @@
 {{/each}}
 
 {{#each filtered.members}}
+{{anchor refid}}
+
 #### {{title proto}}
 
 {{#if enumvalue}}

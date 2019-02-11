@@ -1,3 +1,5 @@
+{{anchor refid}}
+
 ## {{kind}} `{{name}}`
 
 {{briefdescription}}
@@ -16,6 +18,8 @@
 **Members**
 
 {{#each filtered.members}}
+{{anchor refid}}
+
 ### {{title proto}}
 
 {{#if enumvalue}}
