@@ -20,6 +20,6 @@ If you are brand new to Stratify OS, these guides are a good place to start. Str
 
 ## Reference
 
-- Stratify OS Documentation
-- Stratify API Documentation
+- [Stratify API Documentation](StratifyAPI/)
+- Stratify OS Documentation (Coming Soon)
 
