@@ -5,12 +5,12 @@ theme:
     custom_dir: custom_theme/
 nav:
   - Home: index.md
-  - Manual sl: sl-manual.md
   - Guides:
     - Stratify OS: Guide-Stratify-OS.md
     - ARM Cortex M: Guide-ARM-Cortex-M.md
     - Filesystems: Guide-Filesystems.md
     - Device Drivers: Guide-Device-Drivers.md
     - Threads: Guide-Threads.md
+  - Manual sl: sl-manual.md
   - Reference:
     - StratifyAPI: StratifyAPI.md  

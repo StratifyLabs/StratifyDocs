@@ -16,8 +16,6 @@
 
 **{{title proto}}**
 
-{{briefdescription}}
-
 {{#if enumvalue}}
  Values                         | Descriptions                                
 --------------------------------|---------------------------------------------
