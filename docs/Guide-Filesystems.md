@@ -15,20 +15,17 @@ The filesystem simply needs to provide a table of function calls that integrate 
 
 All filesystems on Stratify OS are accessed using the POSIX API.
 
-- [File Access]({{ BASE_URL }}/StratifyOS/html/group___u_n_i___f_i_l_e___a_c_c_e_s_s.html)
-  - open(), close(), read(), write(), ioctl()
-- [File Descriptor Handling]({{ BASE_URL }}/StratifyOS/html/group___u_n_i___f_i_l_d_e_s.html)
-  - fcntl(), fstat(), isatty(), lseek(), lstat()
-- [File Handling]({{ BASE_URL }}/StratifyOS/html/group___u_n_i___f_s.html)
-  - rename(), stat(), mkdir(), rmdir()
-- [Directory Handling]({{ BASE_URL }}/StratifyOS/html/group___d_i_r_e_n_t.html)
-  - opendir(), readdir_r(), closedir(), rewinddir(), seekdir(), telldir()
+- [Unix Standard File Access](../StratifyOS/unistd/)
+    - open(), close(), read(), write(), ioctl(), fcntl(), fstat(), isatty(), lseek(), lstat(), rename(), stat(), mkdir(), rmdir()
+- [Directory Handling](../StratifyOS/directory/)
+    - opendir(), readdir_r(), closedir(), rewinddir(), seekdir(), telldir()
 
 A filesystem implementation consists of configuration, state, and implement the functions in the <a href="https://github.com/StratifyLabs/StratifyOS/blob/master/include/sos/fs/sysfs.h" target="_blank">sysfs_t</a> table.
 
-<div class="alert alert-info">
-Because each filesystem mount has its own configuration and state, the system can have multiple mounts of the same filesystem type if, for example, the hardware has two SD cards!
-</div>
+> **Note**
+
+> Because each filesystem mount has its own configuration and state, the system can have multiple mounts of the same filesystem type if, for example, the hardware has two SD cards.
+
 
 ## Built-In Filesystems
 

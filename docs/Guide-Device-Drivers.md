@@ -1,7 +1,7 @@
 
 # Understanding Device Drivers on Stratify OS
 
-On Stratify OS, hardware is accessed through the filesystem using the POSIX system calls: [open(), close(), read(), write(), ioctl()]({{ BASE_URL }}/StratifyOS/html/group___u_n_i___f_i_l_e___a_c_c_e_s_s.html).
+On Stratify OS, hardware is accessed through the filesystem using the POSIX system calls: [open(), close(), read(), write(), ioctl()](../StratifyOS/unistd/).
 
 ## Accessing Hardware on Stratify OS
 
@@ -291,7 +291,7 @@ Keep in mind, when the program exits (return from main()), close() will be calle
 
 ### Stratify API hal namespace: C++ Classes for Hardware Access
 
-The [Stratify API hal namespace]({{ BASE_URL }}/StratifyAPI/html/namespacehal.html) provides C++ classes for accessing MCU peripherals as well as general devices.
+The [Stratify API hal namespace](../StratifyAPI/#namespace-hal) provides C++ classes for accessing MCU peripherals as well as general devices.
 
 The classes provide a method for open(), close(), read(), write(), ioctl() plus a method for each ioctl request. For example, the PWM code above becomes:
 
@@ -329,7 +329,7 @@ printf("Pin1 value is %d\n", pin1.get_value()); //this won't work - returns -1
 
 ### Where to go from Here
 
-The [Stratify API]({{ BASE_URL }}/StratifyAPI/html/index.html) is a great place to get started accessing hardware. If you find the API limiting, you can look at <a href="https://github.com/StratifyLabs/StratifyAPI" target="_blank">the source code</a> which contains the underlying POSIX calls.
+The [Stratify API](../StratifyAPI/) is a great place to get started accessing hardware. If you find the API limiting, you can look at <a href="https://github.com/StratifyLabs/StratifyAPI" target="_blank">the source code</a> which contains the underlying POSIX calls.
 
 
 

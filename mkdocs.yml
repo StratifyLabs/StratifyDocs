@@ -4,13 +4,23 @@ theme:
     name: readthedocs
     custom_dir: custom_theme/
 nav:
-  - Home: index.md
+  - Introduction: index.md
   - Guides:
     - Stratify OS: Guide-Stratify-OS.md
     - ARM Cortex M: Guide-ARM-Cortex-M.md
     - Filesystems: Guide-Filesystems.md
     - Device Drivers: Guide-Device-Drivers.md
     - Threads: Guide-Threads.md
-  - Manual sl: sl-manual.md
-  - Reference:
-    - StratifyAPI: StratifyAPI.md  
+  - Command Line Manual (sl): sl-manual.md
+  - API Reference:
+    - StratifyAPI: StratifyAPI.md
+    - POSIX pthread: StratifyOS/pthread.md
+    - POSIX unistd: StratifyOS/unistd.md
+    - POSIX aio: StratifyOS/aio.md
+    - POSIX dirent: StratifyOS/directory.md
+    - POSIX time: StratifyOS/time.md
+    - POSIX signals: StratifyOS/signal.md
+    - POSIX semaphore: StratifyOS/semaphore.md
+    - POSIX mqueue: StratifyOS/mqueue.md
+    - Standard C Library: StratifyOS/stdc.md
+    - Error Numbers: StratifyOS/errno.md

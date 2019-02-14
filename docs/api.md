@@ -1,23 +1,3 @@
-# Stratify OS Documentation
-
-## Getting Started
-
-The [Stratify web application](https://app.stratifylabs.co) is the place to get started. After you login, you will be able to install the `sl` command line tool that is used to manage all aspects of the Stratify OS ecosystem from OS packages, to applications, to data in the cloud.
-
-## Guides
-
-If you are brand new to Stratify OS, these guides are a good place to start. Stratify OS is not like any other microcontroller operating system in existence.
-
-- [Stratify OS Overview](Guide-Stratify-OS/)
-- [Understanding Stratify OS on the ARM Cortex M Architecure](Guide-ARM-Cortex-M/)
-- [Understanding Device Drivers](Guide-Device-Drivers/)
-- [Understanding Filesystems](Guide-Filesystems/)
-- [Understanding Threads](Guide-Threads/)
-
-## sl Manual
-
-The `sl` command line tool is used to manage Stratify OS applications, data, and OS packages. To read about its capabilites, see [the manual](sl-manual/).
-
 # API Reference
 
 Stratify OS applications can be built using the StratifyAPI library which is an embedded friendly C++ library for many POSIX and standard C library functions. Or they can be built using direct calls to POSIX and standard C library functions.
@@ -32,6 +12,7 @@ Stratify OS applications can be built using the StratifyAPI library which is an 
 - [POSIX mqueue Reference](../StratifyOS/mqueue/)
 - [Standard C Library Reference](../StratifyOS/stdc/)
 - [Error Numbers Reference](../StratifyOS/errno/)
+
 
 # Thread Example
 

@@ -80,7 +80,7 @@ int main(int argc, char * argv[]){
 }
 ```
 
-For more information, you can read the [sys::Thread documentation]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_thread.html).
+For more information, you can read the [sys::Thread documentation](../StratifyAPI/#classsys_1_1_thread)).
 
 ### Mutex
 
@@ -142,7 +142,7 @@ void * accelerometer_thread_function(void * args){
 }
 ```
 
-If you run into a situation where a high priority thread and a low priority thread need to share a resource, you can set the mutex priority ceiling to the value of the higher priority thread. This will cause any thread that locks the mutex to have an elevated priority until the mutex is unlocked. This is standard POSIX behavior and can be accessed using [sys::MutexAttr]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_mutex_attr.html).
+If you run into a situation where a high priority thread and a low priority thread need to share a resource, you can set the mutex priority ceiling to the value of the higher priority thread. This will cause any thread that locks the mutex to have an elevated priority until the mutex is unlocked. This is standard POSIX behavior and can be accessed using [sys::MutexAttr](../StratifyAPI/#classsys_1_1_mutex_attributes).
 
 ```c++
 #include <sapi/sys.hpp>
@@ -154,14 +154,14 @@ Mutex mutex(attr); //creates a mutex with a priority ceiling of 20
 
 There are many other tools in the POSIX specification that are implemented in Stratify OS that allow you to work with multiple threads (and processes).
 
-- [Semphores]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_sem.html)
-- [Signals]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_signal.html)
-- [Message Queues]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_mq.html)
-- [Scheduler]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_sched.html)
+- [Semphores](../StratifyAPI/#classsys_1_1_sem)
+- [Signals](../StratifyAPI/#classsys_1_1_signal)
+- [Message Queues](../StratifyAPI/#classsys_1_1_mq)
+- [Scheduler](../StratifyAPI/#classsys_1_1_sched)
 
-The [sys::Task class]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_task.html) from the StratifyAPI uses the /dev/sys driver to see how much resources each task (process or thread) is using.
+The [sys::Task class](../StratifyAPI/#classsys_1_1_task_manager) from the StratifyAPI uses the /dev/sys driver to see how much resources each task (process or thread) is using.
 
 ## Try the Demo
 
-Once you have Stratify OS installed on a [development board]({{ BASE_URL }}/hardware/), you can install the thread-demo app from the cloud and check out the [source code on Github](https://github.com/StratifyLabs/thread-demo).
+Once you have Stratify OS installed using the [web application tutorials](https://app.stratifylabs.co), you can install the thread-demo app from the cloud and check out the [source code on Github](https://github.com/StratifyLabs/thread-demo).
 

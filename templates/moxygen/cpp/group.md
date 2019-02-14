@@ -1,6 +1,6 @@
 {{anchor refid}}
 
-## {{kind}} `{{name}}` 
+## {{name}}
 
 {{detaileddescription}}
 
@@ -46,4 +46,3 @@
 {{/each}}
 
 {{/if}}
-

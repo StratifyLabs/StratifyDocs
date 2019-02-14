@@ -40,22 +40,15 @@ Stratify Labs provides OS packages for many popular microcontroller development 
 - STM32F411E-DISCO
 - Nucleo-F746ZG
 - Nucleo-F767ZI
-- [And More]({{ BASE_URL }}/hardware/)
+- And more
 
-To get started on Stratify OS, [you can install a pre-built bootloader and kernel image in a matter of minutes]({{ BASE_URL }}/user%20guides/2018/02/10/Installing-StratifyOS-on-Nucleo-F446ZE/).
-
-{% include youtube-video.html
-	url="https://www.youtube.com/embed/21b8xLXK3zI?rel=0&hd=1"
-    cc="col-md-12"
-	dim_md='width="600" height="338"'
-	dim_lg='width="750" height="422"'
-%}
+To get started on Stratify OS, [you can install a pre-built bootloader and kernel image in a matter of minutes](https://app.stratifylabs.co).
 
 For a custom BSP, you just have to change a few configuration tables which define which pins and drivers you want to include in the build. The BSP uses link level configuration settings which means you don't have to build the Stratify OS libraries in order to create a custom BSP.
 
 ### Stratify OS Library
 
-The Stratify OS library includes code that is developed for the ARM Cortex M architecture to accomplish context switching, filesystem abstraction, mutexes, threads, etc. The OS functionality is accessible via a [POSIX API]({{ BASE_URL }}/StratifyOS/html/group___p_o_s_i_x.html) including:
+The Stratify OS library includes code that is developed for the ARM Cortex M architecture to accomplish context switching, filesystem abstraction, mutexes, threads, etc. The OS functionality is accessible via a [POSIX API](../api/) including:
 
 - unistd: e.g., open(), close(), read(), write(), ioctl(), and usleep()
 - pthreads: e.g., pthread_create()
@@ -150,13 +143,13 @@ When the application is built, it is linked to a CRT library (libsos_crt) that w
 
 ### Memory Protected Processes
 
-Stratify OS uses the [ARM Cortex M memory protection unit (MPU)]({{ BASE_URL }}/user%20guides/2018/03/06/How-Stratify-OS-Levarages-ARM-Cortex-M/) to prevent processes from clobbering memory in other applications. Because applications run in thread mode (unprivileged mode), they cannot directly access hardware resources ([they must use device drivers]({{ BASE_URL }}/user%20guides/2018/02/10/Understanding-Device-Drivers/)).
+Stratify OS uses the [ARM Cortex M memory protection unit (MPU)](../Guide-ARM-Cortex-M/#thread-and-handler-mode-with-the-mpu) to prevent processes from clobbering memory in other applications. Because applications run in thread mode (unprivileged mode), they cannot directly access hardware resources ([they must use device drivers](../Guide-Device-Drivers/)).
 
 ### Relocatable Programs
 
 The code is built in a re-locatable fashion such that it is translated when it is installed to its execution location in either flash or RAM. The relocatable copy of the program can be installed in a data filesystem (e.g., on an external SD card) and then be loaded dynamically.
 
-The code below uses the [Stratify API]({{ BASE_URL }}/StratifyAPI/html/classsys_1_1_sys.html) to launch a program stored on a data filesystem.
+The code below uses the [Stratify API](../StratifyAPI/#namespace-sys) to launch a program stored on a data filesystem.
 
 ```c
 #include <sapi/sys.hpp>
@@ -174,12 +167,6 @@ Sys::launch() calls a Stratify OS function called launch(). Most system calls ar
 
 ## What to do Now
 
-Now that you understand the basics you can:
-
-- [Set up an IDE]({{ BASE_URL }}/user%20guides/2018/02/20/SDK-Qt-Creator-Setup/) (5 minutes. Skip this if you already have a CMake compatible setup that you like)
-- [Install the SDK]({{ BASE_URL }}/user%20guides/2018/02/10/SDK-Installation/) (5 minutes)
-- [Install Stratify OS on a development board]({{ BASE_URL }}/hardware/) (1 minute)
-- [Build, Install, and Run HelloWorld]({{ BASE_URL }}/user%20guides/2018/02/10/HelloWorld-Download-Build-Install/) (2 minutes)
-
+Now that you understand the basics you can head over to the [Stratify web application](https://app.stratifylabs.co) and run through the tutorials.
 
 
