@@ -6,15 +6,14 @@
 
 {{#if filtered.members}}
 
-### Summary
+### Prototypes
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-{{#each filtered.compounds}}{{cell proto}}        | {{cell summary}}
-{{/each}}{{#each filtered.members}}{{cell proto}} | {{cell summary}}
+{{#each filtered.compounds}}
+- {{cell proto}} {{cell summary}}
+{{/each}}{{#each filtered.members}}- {{cell proto}}
 {{/each}}
 
-### Members
+### Details
 
 {{#each filtered.compounds}}
 {{anchor refid}}
@@ -33,9 +32,7 @@
 #### {{title proto}}
 
 {{#if enumvalue}}
- Values                         | Descriptions                                
---------------------------------|---------------------------------------------
-{{#each enumvalue}}{{cell name}}            | {{cell summary}}
+{{#each enumvalue}}- {{cell name}} {{cell summary}}
 {{/each}}
 {{/if}}
 

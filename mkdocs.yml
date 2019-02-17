@@ -20,6 +20,7 @@ nav:
     - POSIX dirent: StratifyOS/directory.md
     - POSIX time: StratifyOS/time.md
     - POSIX signals: StratifyOS/signal.md
+    - POSIX sched: StratifyOS/sched.md
     - POSIX semaphore: StratifyOS/semaphore.md
     - POSIX mqueue: StratifyOS/mqueue.md
     - Standard C Library: StratifyOS/stdc.md
