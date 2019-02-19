@@ -7,14 +7,14 @@ On Stratify OS, hardware is accessed through the filesystem using the POSIX syst
 
 The following POSIX calls are used to access hardware on Stratify OS.
 
-````c
+```c
 #include <unistd.h>
 int open(const char * name, int flags, int mode);
 int close(int fd);
 int read(int fd, void * buf, int nbyte);
 int write(int fd, const void * buf, int nbyte);
 int ioctl(int fd, int request, ...);
-````
+```
 
 ### Opening a Device
 
@@ -22,7 +22,7 @@ All devices are located in the "/dev" folder and are named based on their functi
 
 For example, to open the uart, we use the following code.
 
-````c
+```c
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -32,7 +32,7 @@ fd = open("/dev/uart0", O_RDWR);
 if( fd < 0 ){
     perror("failed to open uart0");
 }
-````
+```
 
 If "/dev/uart0" can be opened, fd (zero or more) will be associated with uart0. Once a device is opened, it needs to be configured (unless it has already been configured by another process or thread).
 
@@ -130,7 +130,7 @@ if( ret > 0 ){ //echo the bytes
     write(fd, buffer, ret);
 }
 close(fd);
-`````
+````
 
 ````c
 #include <unistd.h>
