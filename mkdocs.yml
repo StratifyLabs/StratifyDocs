@@ -17,15 +17,15 @@ nav:
     - Threads: Guide-Threads.md
   - Command Line Manual (sl): sl-manual.md
   - API Reference:
-    - StratifyAPI: StratifyAPI.md
-    - POSIX pthread: StratifyOS/pthread.md
-    - POSIX unistd: StratifyOS/unistd.md
-    - POSIX aio: StratifyOS/aio.md
-    - POSIX dirent: StratifyOS/directory.md
-    - POSIX time: StratifyOS/time.md
-    - POSIX signals: StratifyOS/signal.md
-    - POSIX sched: StratifyOS/sched.md
-    - POSIX semaphore: StratifyOS/semaphore.md
-    - POSIX mqueue: StratifyOS/mqueue.md
+    - C++ StratifyAPI: StratifyAPI.md
+    - pthread: StratifyOS/pthread.md
+    - unistd: StratifyOS/unistd.md
+    - aio: StratifyOS/aio.md
+    - dirent: StratifyOS/directory.md
+    - time: StratifyOS/time.md
+    - signals: StratifyOS/signal.md
+    - sched: StratifyOS/sched.md
+    - semaphore: StratifyOS/semaphore.md
+    - mqueue: StratifyOS/mqueue.md
     - Standard C Library: StratifyOS/stdc.md
     - Error Numbers: StratifyOS/errno.md
