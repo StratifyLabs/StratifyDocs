@@ -7,6 +7,7 @@ nav:
   - Introduction: index.md
   - Guides:
     - Stratify OS: Guide-Stratify-OS.md
+    - Qt Creator Code Editor: Guide-Qt-Creator.md
     - ARM Cortex M: Guide-ARM-Cortex-M.md
     - Filesystems: Guide-Filesystems.md
     - Device Drivers: Guide-Device-Drivers.md
