@@ -16,6 +16,7 @@ nav:
     - Filesystems: Guide-Filesystems.md
     - Device Drivers: Guide-Device-Drivers.md
     - Threads: Guide-Threads.md
+    - CMake Projects: Guide-CMake.md
   - Command Line Manual (sl): sl-manual.md
   - API Reference:
     - C++ StratifyAPI: StratifyAPI.md
