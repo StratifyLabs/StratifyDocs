@@ -2,9 +2,9 @@
 
 Stratify OS includes a suite of cmake scripts that can be used to create:
 
-- Applications (A)
-- Libraries (L)
-- OS Packages (O)
+- Applications
+- Libraries
+- OS Packages
 
 # Building Applications
 
