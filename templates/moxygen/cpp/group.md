@@ -9,7 +9,7 @@
 ### Prototypes
 
 {{#each filtered.compounds}}
-- {{cell proto}} {{cell summary}}
+- {{cell proto}}
 {{/each}}{{#each filtered.members}}- {{cell proto}}
 {{/each}}
 
@@ -32,7 +32,7 @@
 #### {{title proto}}
 
 {{#if enumvalue}}
-{{#each enumvalue}}- {{cell name}} {{cell summary}}
+{{#each enumvalue}}- `{{cell name}}` {{cell summary}}
 {{/each}}
 {{/if}}
 

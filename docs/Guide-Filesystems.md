@@ -32,13 +32,13 @@ A filesystem implementation consists of configuration, state, and implement the 
 Stratify OS includes built-in filesystems that can be configured with any board support package (BSP).
 
 - System Filesystem
-  - Always mounted at "/" and contains a list of other filesystems
+    - Always mounted at "/" and contains a list of other filesystems
 - Device Filesystem
-  - Typically mounted at "/dev" and allows access to devices
+    - Typically mounted at "/dev" and allows access to devices
 - App Filesystem
-  - Always mounted at "/app" and provides access to the systems executable flash memory and RAM for installing and executing applications
+    - Always mounted at "/app" and provides access to the systems executable flash memory and RAM for installing and executing applications
 - Stratify flash file system (sffs)
-  - Typically mounted at "/home" and is a typical data filesystem that requires an external memory chip
+    - Typically mounted at "/home" and is a typical data filesystem that requires an external memory chip
 
 The BSP would use the following code to mount the above filesystems.
 
@@ -87,7 +87,7 @@ The above code assumes the UART has already been [configured using ioctl() calls
 
 ## Third Party Filesystems
 
-Any filesystem can be ported to Stratify OS. For data filesystems, the filesystem does not provide the actual device driver. It just needs to read and write to a [drive](http://localhost:4001/StratifyOS/html/group___d_r_i_v_e.html) using the device driver. So once the filesystem is ported, it can be implemented on any storage device without modification.
+Any filesystem can be ported to Stratify OS. For data filesystems, the filesystem does not provide the actual device driver. It just needs to read and write to a [drive](https://github.com/StratifyLabs/StratifyOS/blob/master/include/sos/dev/drive.h) using the device driver. So once the filesystem is ported, it can be implemented on any storage device without modification.
 
 ### FAT Filesystem on Stratify OS
 

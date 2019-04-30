@@ -7,8 +7,8 @@
 **Classes**
 
 {{#each filtered.members}}
-- {{cell proto}} {{cell summary}}
-{{/each}}{{#each filtered.compounds}}- {{cell proto}} {{cell summary}}
+- {{cell proto}}
+{{/each}}{{#each filtered.compounds}}- {{cell proto}}
 {{/each}}
 
 {{#if filtered.members}}

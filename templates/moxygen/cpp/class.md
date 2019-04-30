@@ -9,8 +9,8 @@
 ### Methods
 
 {{#each filtered.members}}
-- {{cell proto}} {{cell summary}}
-{{/each}}{{#each filtered.compounds}}- {{cell proto}} {{cell summary}}
+- {{cell proto}}
+{{/each}}{{#each filtered.compounds}}- {{cell proto}}
 {{/each}}
 
 ### Details
@@ -32,7 +32,7 @@
 #### {{title proto}}
 
 {{#if enumvalue}}
-{{#each enumvalue}}- {{cell name}} {{cell summary}}
+{{#each enumvalue}}- `{{cell name}}` {{cell summary}}
 {{/each}}
 {{/if}}
 
