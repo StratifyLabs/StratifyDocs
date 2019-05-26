@@ -16,9 +16,9 @@ The filesystem simply needs to provide a table of function calls that integrate 
 All filesystems on Stratify OS are accessed using the POSIX API.
 
 - [Unix Standard File Access](../StratifyOS/unistd/)
-    - open(), close(), read(), write(), ioctl(), fcntl(), fstat(), isatty(), lseek(), lstat(), rename(), stat(), mkdir(), rmdir()
+    - `open()`, `close()`, `read()`, `write()`, `ioctl()`, `fcntl()`, `fstat()`, `isatty()`, `lseek()`, `lstat()`, `rename()`, `stat()`, `mkdir()`, `rmdir()`
 - [Directory Handling](../StratifyOS/directory/)
-    - opendir(), readdir_r(), closedir(), rewinddir(), seekdir(), telldir()
+    - `opendir()`, `readdir_r()`, `closedir()`, `rewinddir()`, `seekdir()`, `telldir()`
 
 A filesystem implementation consists of configuration, state, and implement the functions in the <a href="https://github.com/StratifyLabs/StratifyOS/blob/master/include/sos/fs/sysfs.h" target="_blank">sysfs_t</a> table.
 
@@ -52,9 +52,9 @@ const sysfs_t const sysfs_list[] = {
 };
 ```
 
-Removing entries from the above table will remove the filesystem from the BSP. If an external chip is not available, the SFFS_MOUNT() line is simply removed.
+Removing entries from the above table will remove the filesystem from the BSP. If an external chip is not available, the `SFFS_MOUNT()` line is simply removed.
 
-If the hardware includes two external flash chips, the BSP can create two separate mounts at "/home" and "/home1". Each mount will have a unique configuration and state which specify the driver and hold any state saving mechanisms.
+If the hardware includes two external flash chips, the BSP can create two separate mounts at `/home` and `/home1`. Each mount will have a unique configuration and state which specify the driver and hold any state saving mechanisms.
 
 ### Accessing the Filesystem
 
@@ -91,7 +91,7 @@ Any filesystem can be ported to Stratify OS. For data filesystems, the filesyste
 
 ### FAT Filesystem on Stratify OS
 
-For example, <a href="https://github.com/StratifyLabs/StratifyOS-fatfs" target="_blank">this project shows how to implement a FAT filesystem</a>. To use this filesystem in a BSP on an SD card, the following code is used.
+For example, <a href="https://github.com/StratifyLabs/StratifyOS-fatfs" target="_blank">this project shows how to implement a FAT filesystem</a>. To use this filesystem in an OS package on an SD card, the following code is used.
 
 ```c
 //this is the state and configuration for the SD card driver: "/dev/drive0"
@@ -146,6 +146,6 @@ Another example of porting a filesystem is the <a href="https://github.com/Strat
 
 ## Wrap Up
 
-Filesystems on Stratify OS are designed to be highly extensible. Almost any filesystem can be ported to Stratify OS such that the application developer has simple and easy access just like on a fully-featured desktop or mobile OS.
+Filesystems on Stratify OS are designed to be highly extensible and completely abstracted from the application. Almost any filesystem can be ported to Stratify OS such that the application developer has simple and easy access just like on a fully-featured desktop or mobile OS.
 
 

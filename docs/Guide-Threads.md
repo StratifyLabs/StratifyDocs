@@ -1,6 +1,6 @@
 # Understanding Threads on Stratify OS
 
-Stratify OS threads are based on POSIX threads. They are just written with an API wrapper that allows the use of the pthread API. They are written based on the POSIX specification. Stratify OS includes an embedded friendly C++ API called the Stratify API that makes it extremely easy to manage threads.
+Stratify OS threads are designed according the POSIX specification. Stratify OS includes an embedded friendly C++ API called the Stratify API that makes it extremely easy to manage threads.
 
 ## POSIX Thread Concepts
 
@@ -15,7 +15,7 @@ If you are new to POSIX threads, this is a short explanation to understand the c
 
 On a typical operating system (Linux, Windows, Mac), a process is a compiled program that can be stored on disk then loaded into its own virtual address space upon execution. The processor uses a memory management unit (MMU) to map the virtual address space to physical memory in real-time. Each process has at least one thread which defines a sequence of instructions that are executing. New threads created within the the process share the same virtual address space with an independent stack and shared heap.
 
-Stratify OS can run processes but it does so on hardware without an MMU. At compile time, the process is built to run in a faux address space. When it is copied to RAM or flash for execution, Stratify OS uses a code relocation algorithm and the hardware memory protection unit (MPU) to mimic the behavior of the MMU.
+Stratify OS can run processes [but it does so on hardware without an MMU](https://blog.stratifylabs.co/device/2014-05-03-Applications-without-MMU/). At compile time, the process is built to run in a faux address space. When it is copied to RAM or flash for execution, Stratify OS uses a code relocation algorithm and the hardware memory protection unit (MPU) to mimic the behavior of the MMU.
 
 In short, processes are compiled programs whose memory is protected from access by other programs. Threads are execution sequences within a process.
 
@@ -84,9 +84,9 @@ For more information, you can read the [sys::Thread documentation](../StratifyAP
 
 ### Mutex
 
-A mutex a software concept that allows only one thread to access a resource at a time.  When a thread "locks" a mutex, the thread will block until the mutex is available and then continue once acquires the mutex. When the thread is done using the mutex, it "unlocks" the mutex allowing another thread to use it.
+A mutex, short for mutual exclusion, is a software concept that allows only one thread to access a resource at a time.  When a thread "locks" a mutex, the thread will block until the mutex is available and then continue once it acquires the mutex. When the thread is done using the mutex, it "unlocks" the mutex allowing another thread to use it.
 
-Consider a board that has an accelerometer and a fuel gauge on the I2C bus. An application might use one thread to monitor the accelerometer and one to monitor the fuel gauge. However, both sensors use the same I2C bus which can only address one sensor at a time.
+Consider a board that has an accelerometer and a fuel gauge on the I2C bus. An application might use one thread to monitor the accelerometer and one to monitor the fuel gauge. However, both sensors use the same I2C bus which can only address one sensor at a time. A mutex allows the each thread exclusive access to the I2C bus.
 
 ```c++
 #include <sapi/hal.hpp> //I2C 
@@ -159,7 +159,7 @@ There are many other tools in the POSIX specification that are implemented in St
 - [Message Queues](../StratifyAPI/#classsys_1_1_mq)
 - [Scheduler](../StratifyAPI/#classsys_1_1_sched)
 
-The [sys::Task class](../StratifyAPI/#classsys_1_1_task_manager) from the StratifyAPI uses the /dev/sys driver to see how much resources each task (process or thread) is using.
+The [sys::TaskManager class](../StratifyAPI/#classsys_1_1_task_manager) from the StratifyAPI uses the `/dev/sys` driver to see how much resources each task (process or thread) is using and comes in very handy while debugging resource constrained applications.
 
 ## Try the Demo
 

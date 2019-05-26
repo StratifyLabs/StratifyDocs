@@ -2,7 +2,64 @@
 
 ## Getting Started
 
-The [Stratify web application](https://app.stratifylabs.co) is the place to get started. After you login, you will be able to install the `sl` command line tool that is used to manage all aspects of the Stratify OS ecosystem from OS packages, to applications, to data in the cloud.
+The first step to creating IoT devices using Stratify OS is to install the command line tool (called `sl`). You can do so in just a few seconds by copying and pasting the commands below to a bash terminal.
+
+**Install sl on Mac**
+```
+mkdir -p /Applications/StratifyLabs-SDK/Tools/gcc/bin
+curl -L -o /Applications/StratifyLabs-SDK/Tools/gcc/bin/sl 'https://stratifylabs.page.link/slmac'
+chmod 755 /Applications/StratifyLabs-SDK/Tools/gcc/bin/sl
+echo 'export PATH=/Applications/StratifyLabs-SDK/Tools/gcc/bin:$PATH' >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+**Install sl on Windows**
+
+First, install [GitBash](https://github.com/git-for-windows/git/releases/tag/v2.20.1.windows.1) (or another MinGW terminal) with access to curl.
+
+```
+mkdir -p /C/StratifyLabs-SDK/Tools/gcc/bin
+curl -L -o /C/StratifyLabs-SDK/Tools/gcc/bin/sl.exe 'https://stratifylabs.page.link/slwin'
+chmod 755 /C/StratifyLabs-SDK/Tools/gcc/bin/sl.exe
+echo 'export PATH=/C/StratifyLabs-SDK/Tools/gcc/bin:$PATH' >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+**Verify Installation**
+
+Verify the command line tool installed by typing `sl --version`. The first time you type the command, the browser will be launched so that you can login. You copy the login command to the terminal and execute it. Then type `sl --version` again. The output should look something like this.
+
+```
+- about: 
+   publisher: Stratify Labs, Inc
+   version: 0.33
+   gitHash: 02aa4ca
+   apiVersion: 3.8.0b
+   apiGitHash: 792faa9
+```
+
+From there, you can check out the tutorials within the [Stratify Dashboard](https://app.stratifylabs.co). Here are a few quick examples:
+
+**Install Stratify OS on a supported board**
+
+```
+sl cloud.bootstrap:bootloader
+sl cloud.bootstrap:os
+```
+
+**Install and Run HelloWorld from the Stratify Cloud**
+
+```
+sl cloud.install:id=Kvp7xXzdO94kyCWAAcmW application.run:path=HelloWorld,terminal
+```
+
+**Install the SDK then Build and Run HelloWorld**
+
+```
+sl sdk.install
+sl app.create:name=HelloWorld
+sl app.build:path=HelloWorld app.install:path=HelloWorld,run,terminal
+```
 
 ## Guides
 
@@ -33,71 +90,3 @@ Stratify OS applications can be built using the StratifyAPI library which is an 
 - [Standard C Library Reference](../StratifyOS/stdc/)
 - [Error Numbers Reference](../StratifyOS/errno/)
 
-# Thread Example
-
-The following is an example of using the StratifyAPI to create a thread versus using POSIX directly.
-
-```c++
-//Using the StratifyAPI
-#include <sapi/sys.hpp>
-
-void * thread_function(void * args){
-    u32 * argument = (u32*)args;
-    //execute thread stuff
-    //*argument is equal to 10
-    return NULL;
-}
-
-int main(int argc, char * argv[]){
-    Thread thread;
-    u32 argument = 10;
-    thread.create(thread_function, &argument);
-    thread.wait();
-}
-```
-
-```c
-//Using POSIX
-#include <pthread.h>
-
-void * thread_function(void * args){
-    
-    u32 * argument = (u32*)args;
-    //execute thread stuff
-
-    //*argument is equal to 10
-
-    return NULL;
-}
-
-int main(int argc, char * argv[]){
-    pthread_t t;
-    pthread_attr_t attr;
-
-    if ( pthread_attr_init(&attr) < 0 ){
-        perror("failed to initialize attr");
-        return -1;
-    }
-
-    if ( pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) < 0 ){
-        perror("failed to set detach state");
-        return -1;
-    }
-
-    if ( pthread_attr_setstacksize(&attr, 4096) < 0 ){
-        perror("failed to set stack size");
-        return -1;
-    }
-
-    if ( pthread_create(&t, &attr, thread_function, NULL) ){
-        perror("failed to create thread");
-        return -1;
-    }
-
-    //this just checks to see if the thread is still valid (doesn't send a signal)
-    while( pthread_kill(t, 0) == 0 ){
-        usleep(100*1000);
-    }
-    return 0;
-}
-```

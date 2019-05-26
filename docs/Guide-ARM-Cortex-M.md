@@ -13,7 +13,7 @@ Stratify OS was designed specifically to take advantage of the powerful hardware
 
 ## Thread and Handler Mode with the MPU
 
-The Cortex M has two execution modes: thread and handler. ISR's alway execute in handler mode while non-ISR's can be configured for thread or handler mode. The MPU allows different permissions to the same memory based on the execution mode. In Stratify OS, applications--[which are built independent of the kernel](Guide-Stratify-OS/)--run in thread mode while specified kernel code and device drivers run in handler mode. This prevents applications from accessing sensitive code or data.
+The Cortex M has two execution modes: thread and handler. ISR's alway execute in handler mode while non-ISR's can be configured for thread or handler mode. The MPU allows different permissions to the same memory based on the execution mode. In Stratify OS, applications--[which are built independent of the kernel](../Guide-Stratify-OS/)--run in thread mode while specified kernel code and device drivers run in handler mode. This prevents applications from accessing sensitive code or data.
 
 The general MPU access for applications is organized as follows:
 
@@ -39,7 +39,7 @@ The SVC handler will execute the function with its argument if it passes securit
 
 ## PendSV and SysTick
 
-The PendSV and SysTick interrupts are used for context switching in Stratify OS. When PendSV is triggered, it causes an immediate context switch. This is used in FIFO-style scheduling or with sched_yield(). The SysTick interrupt triggers a timeout when the timer expires and is used for round robin scheduling.
+The PendSV and SysTick interrupts are used for context switching in Stratify OS. When PendSV is triggered, it causes an immediate context switch. This is used in FIFO-style scheduling or with `sched_yield()`. The SysTick interrupt triggers a timeout when the timer expires and is used for round robin scheduling.
 
 ## NVIC
 
@@ -53,7 +53,7 @@ The WDT and fault handlers always have the highest interrupt priority in Stratif
 
 The FPU is part of the Cortex M4F (single precision) and Cortex M7 (single or single/double precision) architectures. Stratify OS integrates all FPU register handling into the context switching mechanisms. Developers can simply use floating point values as they normally would in any program.
 
-To take full advantage of the FPU, keep in mind to use float types on the M4F and M7's with only single precision.  For example:
+To take full advantage of the FPU, keep in mind to use `float` types on the M4F and M7's with only single precision.  For example:
 
 ```c
 float x = 1.0; //Bad: 1.0 is a double that needs to be converted to float

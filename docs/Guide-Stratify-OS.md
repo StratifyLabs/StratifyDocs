@@ -12,18 +12,17 @@ It does this by:
 - Providing a cloud platform for board firmware updates, sharing pre-built applications, as well as storing and retrieving data
 
 
-**Note.** 
-
+> **Note.** 
+>
 > Stratify OS is perfect for building hardware modules (like bluetooth, wifi, etc). Most module manufacturers use serialization or complex SDKs based on source code integration or scripting.
-
+>
 > With Stratify OS, module manufacturers can define the BSP and root applications while allowing customers to build and run applications that run native C/C++ applications on the MCU using an easy-to-use POSIX API.
 
-> If you are a module maker interested in providing a simple-to-use SDK to your customers, [we can help](https://stratifylabs.co/contact-us).
 
 
 ## OS Built and Installed Independent of Applications
 
-The first thing to understand is that the OS is built and installed independent of applications. A project for building Stratify OS for a particular board is called a board support package (BSP). The BSP is built using:
+The first thing to understand is that the OS is built and installed independent of applications. A project for building Stratify OS for a particular board is called an OS package. The OS package is built using:
 
 - Board specific configuration tables
 - Any board specific code provided by the board manufacturer (such as custom drivers or kernel requests)
@@ -44,7 +43,7 @@ Stratify Labs provides OS packages for many popular microcontroller development 
 
 To get started on Stratify OS, [you can install a pre-built bootloader and kernel image in a matter of minutes](https://app.stratifylabs.co).
 
-For a custom BSP, you just have to change a few configuration tables which define which pins and drivers you want to include in the build. The BSP uses link level configuration settings which means you don't have to build the Stratify OS libraries in order to create a custom BSP.
+For a custom OS package, you just have to change a few configuration tables which define which pins and drivers you want to include in the build. The OS package uses link level configuration settings which means you don't have to build the Stratify OS libraries in order to create a custom OS package.
 
 ### Stratify OS Library
 
@@ -67,17 +66,17 @@ The Stratify OS library is built per instruction set architecture and ABI:
 
 ### Stratify OS MCU Library
 
-The mcu specific libraries provide low level abstraction at the chip level. BSP drivers use the MCU libraries to provide access to hardware.
+The mcu specific libraries provide low level abstraction at the chip level. OS drivers use the MCU libraries to provide access to hardware.
 
-For example, the BSP includes a table of devices with entries like this:
+For example, the OS package includes a table of devices with entries like this:
 
 ```c
 DEVFS_DEVICE("spi0", mcu_spi, 0, 0, 0, 0666, USER_ROOT, S_IFCHR)
 ```
 
-The line above means that "/dev/spi0" will use the "mcu_spi" driver on port 0 with no default configuration provided, with access permissions 0666, root ownership, and character device.
+The line above means that "/dev/spi0" will use the "mcu_spi" driver on port 0 with no default configuration provided, with access permissions `0666`, root ownership, and character device.
 
-For the BSP to build correctly, the MCU library must implement the following functions:
+For the OS package to build correctly, the MCU library must implement the following functions:
 
 ```c
 int mcu_spi_open(const devfs_handle_t * handle);
@@ -87,7 +86,7 @@ int mcu_spi_write(const devfs_handle_t * handle, const void * buf, int nbyte);
 int mcu_spi_read(const devfs_handle_t * handle, void * buf, int byte);
 ```
 
-The file <sos/dev/spi.h> defines the IOCTL calls and data structures required to use and implement the driver. [The application uses the following code for driver access](../Guide-Device-Drivers/):
+The file `<sos/dev/spi.h>` defines the IOCTL calls and data structures required to use and implement the driver. [The application uses the following code for driver access](../Guide-Device-Drivers/):
 
 ```c
 #include <unistd.h>
@@ -143,11 +142,11 @@ When the application is built, it is linked to a CRT library (libsos_crt) that w
 
 ### Memory Protected Processes
 
-Stratify OS uses the [ARM Cortex M memory protection unit (MPU)](../Guide-ARM-Cortex-M/#thread-and-handler-mode-with-the-mpu) to prevent processes from clobbering memory in other applications. Because applications run in thread mode (unprivileged mode), they cannot directly access hardware resources ([they must use device drivers](../Guide-Device-Drivers/)).
+Stratify OS uses the [ARM Cortex M memory protection unit (MPU)](../Guide-ARM-Cortex-M/#thread-and-handler-mode-with-the-mpu) to prevent processes from clobbering memory in other applications. Because applications run in thread mode (unprivileged mode), they cannot directly access hardware resources. ([They must use device drivers](../Guide-Device-Drivers/)).
 
 ### Relocatable Programs
 
-The code is built in a re-locatable fashion such that it is translated when it is installed to its execution location in either flash or RAM. The relocatable copy of the program can be installed in a data filesystem (e.g., on an external SD card) and then be loaded dynamically.
+The code is built in a re-locatable fashion such that it is translated when it is installed to its execution location in either flash or RAM (including external RAM). The relocatable copy of the program can be installed in a data filesystem (e.g., on an external SD card) and then be loaded dynamically.
 
 The code below uses the [Stratify API](../StratifyAPI/#namespace-sys) to launch a program stored on a data filesystem.
 
@@ -161,12 +160,12 @@ int main(int argc, char * argv[](){
 }
 ```
 
-The program above launches "HelloWorld" that is installed in the local folder "/home". If "HelloWorld" exists in RAM or flash, it will be executed. If not, it will be dynamically installed to flash and executed. 
+The program above launches "HelloWorld" that is installed in the local folder `/home`. If "HelloWorld" exists in RAM or flash, it will be executed. If not, it will be dynamically installed to flash and executed. 
 
-Sys::launch() calls a Stratify OS function called launch(). Most system calls are based on the standard C library or POSIX API. However, because the Cortex M architecture does not have an MMU, launch() is used in lieu of the exec() and fork() function families.
+`Sys::launch()` calls a Stratify OS function called `launch()`. Most system calls are based on the standard C library or POSIX API. However, because the Cortex M architecture [does not have an MMU](https://blog.stratifylabs.co/device/2014-05-03-Applications-without-MMU/), `launch()` is used in lieu of the `exec()` and `fork()` function families.
 
 ## What to do Now
 
-Now that you understand the basics you can head over to the [Stratify web application](https://app.stratifylabs.co) and run through the tutorials.
+Now that you understand the basics you can head over to the [Stratify Dashboard](https://app.stratifylabs.co) and run through the tutorials.
 
 
