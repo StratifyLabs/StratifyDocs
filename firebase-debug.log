@@ -1,0 +1,25 @@
+[debug] [2019-06-29T21:07:45.558Z] ----------------------------------------------------------------------
+[debug] [2019-06-29T21:07:45.560Z] Command:       /usr/local/Cellar/node@10/10.13.0_1/bin/node /usr/local/bin/firebase serve
+[debug] [2019-06-29T21:07:45.560Z] CLI Version:   7.0.2
+[debug] [2019-06-29T21:07:45.560Z] Platform:      darwin
+[debug] [2019-06-29T21:07:45.560Z] Node Version:  v10.13.0
+[debug] [2019-06-29T21:07:45.562Z] Time:          Sat Jun 29 2019 15:07:45 GMT-0600 (Mountain Daylight Time)
+[debug] [2019-06-29T21:07:45.562Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-29T21:07:45.573Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-29T21:07:45.573Z] > authorizing via signed-in user
+[debug] [2019-06-29T21:07:45.574Z] [iam] checking project stratifydocs for permissions ["firebase.projects.get"]
+[debug] [2019-06-29T21:07:45.575Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/stratifydocs:testIamPermissions  
+
+[debug] [2019-06-29T21:07:46.004Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-29T21:07:46.007Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/stratifydocs  
+ 
+[debug] [2019-06-29T21:07:46.298Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/tgil/git/StratifyDocs'...
+[info] 
+[debug] [2019-06-29T21:07:46.301Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/406488238845/clients/_:getWebAppConfig  
+ 
+[debug] [2019-06-29T21:07:46.666Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: site
+[info] ✔  hosting: Local server: http://localhost:5000

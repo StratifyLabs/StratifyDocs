@@ -7,8 +7,7 @@ Access the docs at https://docs.stratifylabs.co.
 StratifyOS and StratifyAPI must be checked out in the same directory as StratifyDocs.
 
 ```
-cmake -P StratifyDocs.cmake
-mkdocs build
+cmake -P StratifyDocs.cmake && mkdocs build
 ```
 
 # Tools

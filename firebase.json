@@ -5,6 +5,12 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [{
+      "source": "StratifyOS/*/docs/StratifyOS/undefined.md#group__errno",
+      "destination": "StratifyOS/errno/",
+      "type": 301
+    }
     ]
   }
 }
