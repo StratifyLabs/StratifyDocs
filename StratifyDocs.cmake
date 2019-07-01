@@ -5,7 +5,6 @@
 
 brew install doxygen
 npm i moxygen -g
-pip install mkdocs
 
 #]]
 
@@ -16,5 +15,5 @@ pip install mkdocs
 execute_process(COMMAND doxygen WORKING_DIRECTORY ../StratifyOS)
 execute_process(COMMAND doxygen WORKING_DIRECTORY ../StratifyAPI)
 
-execute_process(COMMAND moxygen --html-anchors --groups --templates templates/moxygen/cpp --output docs/StratifyOS/%s.md StratifyOS/xml)
-execute_process(COMMAND moxygen --html-anchors --templates templates/moxygen/cpp --output docs/StratifyAPI.md StratifyAPI/xml)
+execute_process(COMMAND moxygen --html-anchors --groups --templates ../templates/moxygen/cpp --output reference/StratifyOS/%s.md ../StratifyOS/xml WORKING_DIRECTORY content)
+execute_process(COMMAND moxygen --html-anchors --classes --templates ../templates/moxygen/cpp --output reference/StratifyAPI/%s.md ../StratifyAPI/xml WORKING_DIRECTORY content)

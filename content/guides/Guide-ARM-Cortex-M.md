@@ -1,4 +1,15 @@
-# Understanding Stratify OS on the ARM Cortex M
+---
+date: "2019-06-27"
+layout: post
+title: Understanding Stratify OS on the ARM Cortex M
+katex: true
+categories: Guides
+slug: Guide-ARM-Cortex-M
+menu:
+  sidebar:
+    name: ARM Cortex M
+    parent: Guides
+---
 
 Stratify OS was designed specifically to take advantage of the powerful hardware features introduced with the ARM Cortex M architecture.
 

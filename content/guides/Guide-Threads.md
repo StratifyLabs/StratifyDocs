@@ -1,4 +1,14 @@
-# Understanding Threads on Stratify OS
+---
+date: "2019-06-27"
+layout: post
+title: Understanding Threads on Stratify OS
+katex: true
+slug: Guide-Threads
+menu:
+  sidebar:
+    name: Threads
+    parent: Guides
+---
 
 Stratify OS threads are designed according the POSIX specification. Stratify OS includes an embedded friendly C++ API called the Stratify API that makes it extremely easy to manage threads.
 

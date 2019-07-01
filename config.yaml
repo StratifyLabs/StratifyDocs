@@ -1,0 +1,130 @@
+baseURL: 'https://docs.stratifylabs.co'
+title: Stratify Labs
+copyright: ''
+theme: minimo
+disqusShortname: ''
+googleAnalytics: 'UA-75152879-3 '
+Paginate: 50
+disablePathToLower: true
+preserveTaxonomyNames: true
+enableRobotsTXT: true
+pygmentsCodefences: true
+enableEmoji: true
+defaultContentLanguage: en
+params:
+  info:
+    description: Stratify OS Documentation
+    title404: Nothing's here!
+  assets:
+    favicon: favicon.ico
+    gopher: ''
+  copyright:
+    prefix: ''
+    holder: 'Stratify Labs, Inc'
+    startYear: '2010'
+    suffix: ''
+  settings:
+    dateFormat: '2006-01-02'
+    listDateFormat: '2006-01-02'
+    archiveDateFormat: Jan 02
+    hideEntryNavigation: [page]
+    hideEntryMeta: [page]
+    showReadingTime: true
+    showLastmod: true
+    taxonomyCloudShuffle: false
+    accentColor: '#204c9b'
+    hideMainMenu: false
+  sidebar:
+    enable: true
+  widgets:
+    header:
+      - breadcrumbs
+    homepage:
+      - recent_posts
+    sidebar:
+      - about
+      - search
+      - sidebar_menu
+    footer:
+      - social_menu
+  opengraph:
+    facebook:
+      admins: []
+      appID: ''
+      pageID: ''
+    twitter:
+      page: ''
+  seo:
+    titleSeparator: '|'
+  social:
+    facebook: stratifylabs
+    github: StratifyLabs
+    instagram: stratifylabs
+    twitter: stratifylabs
+    youtube: UCGt9kTTn9LtXWEFfpPp6Vqw
+  comments:
+    enable: false
+    isso:
+      enable: false
+      scriptSrc: ''
+      dataAttrs: ''
+    staticman:
+      enable: true
+      apiEndpoint: 'https://api.staticman.net/v2/entry'
+      maxDepth: 2
+      username: tgil
+      repository: minimo
+      branch: master
+    utterances:
+      enable: false
+      issueTerm: pathname
+      github:
+        username: StratifyLabs
+        repository: StratifyDocs
+  search:
+    client: fuse
+    title: Search
+    algolia:
+      appId: ''
+      indexName: ''
+      searchApiKey: ''
+taxonomy_cloud:
+  title: ''
+  taxonomy: tags
+  shuffle: false
+recent_posts:
+  title: Most Recent Posts
+  length: 50
+taxonomies:
+  tag: tags
+permalinks:
+  page: '/:slug/'
+menu:
+  main:
+    - name: Guides
+      weight: -500
+      identifier: '1'
+      url: '/guides/'
+      button: false
+    - name: Reference
+      weight: -400
+      identifier: '2'
+      url: '/guides/api'
+      button: false
+    - name: Blog
+      weight: -300
+      identifier: '3'
+      url: 'https://blog.stratifylabs.co'
+      button: false
+    - name: Signup
+      weight: -200
+      identifier: '4'
+      url: 'http://eepurl.com/bVOzY5'
+      button: true
+blackfriday:
+  hrefTargetBlank: true
+languages:
+  en:
+    lang: en
+    languageName: English
+    weight: 1

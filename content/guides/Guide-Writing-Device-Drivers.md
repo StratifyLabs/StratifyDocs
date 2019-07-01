@@ -1,4 +1,10 @@
-
+---
+date: "2019-06-27"
+layout: post
+title: Writing Device Drivers
+slug: Guide-Writing-Device-Drivers
+katex: true
+---
 
 Creating device drivers for Stratify OS is a matter of implementing 5 function calls that correspond to open(), close(), read(), write(), and ioctl(). The device filesystem uses these calls when a user accesses a device. 
 

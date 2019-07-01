@@ -1,4 +1,14 @@
-# Understanding Sockets on Stratify OS
+---
+date: "2019-06-27"
+layout: post
+title: Understanding Sockets on Stratify OS
+katex: true
+slug: Guide-Sockets
+menu:
+  sidebar:
+    name: Sockets
+    parent: Guides
+---
 
 Stratify OS sockets are based on BSD sockets and implement the POSIX API. The StratifyAPI library provide easy-to-use classes for programming sockets:
 

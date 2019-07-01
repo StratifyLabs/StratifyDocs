@@ -1,3 +1,15 @@
+---
+date: "2019-06-27"
+layout: post
+title: {{kind}}::{{name}}
+katex: true
+categories: {{kind}}
+menu:
+  sidebar:
+    name: {{name}}
+    parent: POSIX
+---
+
 {{anchor refid}}
 
 ## {{name}}
@@ -31,10 +43,7 @@
 
 #### {{title proto}}
 
-{{#if enumvalue}}
-{{#each enumvalue}}- `{{cell name}}` {{cell summary}}
-{{/each}}
-{{/if}}
+{{#if enumvalue}}{{#each enumvalue}}- `{{cell name}}` {{cell summary}}{{/each}}{{/if}}
 
 {{detaileddescription}}
 

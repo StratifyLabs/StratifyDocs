@@ -1,4 +1,13 @@
-# Stratify OS Documentation
+---
+date: "2019-06-27"
+layout: post
+title: Stratify OS Documentation
+slug: Documentation
+katex: true
+menu:
+   sidebar:
+      name: Guides
+---
 
 ## Getting Started
 
@@ -65,11 +74,12 @@ sl app.build:path=HelloWorld app.install:path=HelloWorld,run,terminal
 
 If you are brand new to Stratify OS, these guides are a good place to start. Stratify OS is not like any other microcontroller operating system in existence.
 
-- [Stratify OS Overview](Guide-Stratify-OS/)
-- [Understanding Stratify OS on the ARM Cortex M Architecure](Guide-ARM-Cortex-M/)
-- [Understanding Device Drivers](Guide-Device-Drivers/)
-- [Understanding Filesystems](Guide-Filesystems/)
-- [Understanding Threads](Guide-Threads/)
+- [Stratify OS Overview](/guides/Guide-Stratify-OS/)
+- [Understanding Stratify OS on the ARM Cortex M Architecure](/guides/Guide-ARM-Cortex-M/)
+- [Understanding Device Drivers](/guides/Guide-Device-Drivers/)
+- [Understanding Device Drivers](/guides/Guide-Device-Drivers/)
+- [Understanding Filesystems](/guides/Guide-Filesystems/)
+- [Understanding Threads](/guides/Guide-Threads/)
 
 ## sl Manual
 

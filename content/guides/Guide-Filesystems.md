@@ -1,4 +1,15 @@
-# Understanding Filesystems on Stratify OS
+---
+date: "2019-06-27"
+layout: post
+title: Understanding Filesystems on Stratify OS
+katex: true
+categories: Guides
+slug: Guide-Filesystems
+menu:
+  sidebar:
+    name: Filesystems
+    parent: Guides
+---
 
 Stratify OS supports any number and type of filesystem. 
 

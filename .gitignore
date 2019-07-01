@@ -1,9 +1,10 @@
 
-docs/StratifyAPI.md
-docs/StratifyOS.md
+content/reference/StratifyAPI/
+content/reference/StratifyOS/
 docs/StratifyOS/
 site/
 StratifyAPI/
 StratifyOS/
 docs/sl-manual.md
 moxygen/
+public/

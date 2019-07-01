@@ -1,4 +1,14 @@
-# Managing the Stratify Labs SDK
+---
+date: "2019-06-27"
+layout: post
+title: Managing the Stratify Labs SDK
+katex: true
+slug: Guide-SDK
+menu:
+  sidebar:
+    name: SDK
+    parent: Guides
+---
 
 The `sl` command line tool can be used to quickly and easily install the Stratify Labs SDK.
 

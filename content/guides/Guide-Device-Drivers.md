@@ -1,7 +1,17 @@
+---
+date: "2019-06-27"
+layout: post
+title: Understanding Device Drivers on Stratify OS
+katex: true
+categories: Guides
+slug: Guide-Device-Drivers
+menu:
+  sidebar:
+    name: Device Drivers
+    parent: Guides
+---
 
-# Understanding Device Drivers on Stratify OS
-
-On Stratify OS, hardware is accessed through the filesystem using the POSIX system calls: [open(), close(), read(), write(), ioctl()](../StratifyOS/unistd/).
+On Stratify OS, hardware is accessed through the filesystem using the POSIX system calls: [open(), close(), read(), write(), ioctl()](/reference/StratifyOS/unistd/).
 
 ## Accessing Hardware on Stratify OS
 

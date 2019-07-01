@@ -1,4 +1,14 @@
-# Porting Stratify OS to a new MCU Family
+---
+date: "2019-06-27"
+layout: post
+title: Porting Stratify OS to a new MCU Family
+katex: true
+slug: Guide-Porting
+menu:
+  sidebar:
+    name: Porting
+    parent: Guides
+---
 
 ## Introduction
 

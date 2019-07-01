@@ -1,10 +1,18 @@
+---
+date: "2019-06-27"
+layout: post
+title: {{kind}}::{{name}}
+katex: true
+categories: {{kind}}
+menu:
+  sidebar:
+    name: {{name}}
+    parent: {{kind}}
+---
+
 {{anchor refid}}
 
-## {{kind}} `{{name}}`
-
 {{detaileddescription}}
-
-**Classes**
 
 {{#each filtered.members}}
 - {{cell proto}}
@@ -12,7 +20,8 @@
 {{/each}}
 
 {{#if filtered.members}}
-**Details**
+
+## Details
 
 {{#each filtered.members}}
 {{anchor refid}}

@@ -1,7 +1,16 @@
+---
+date: "2019-06-27"
+layout: post
+title: Understanding Stratify OS
+slug: Guide-Stratify-OS
+katex: true
+menu:
+  sidebar:
+    name: Stratify OS
+    parent: Guides
+---
 
-# Understanding Stratify OS
-
-![Stratify OS Overview](img/Stratify-OS-Overview.png)
+![Stratify OS Overview](/images/Stratify-OS-Overview.png)
 
 Stratify OS is not like any other microcontroller operating system you have ever used. [It was built from the ground up for the ARM Cortex M architecture](../Guide-ARM-Cortex-M/) to solve the challenge of increasingly complex hardware designs and expanding software requirements. 
 

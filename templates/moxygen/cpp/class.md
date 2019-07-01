@@ -1,6 +1,12 @@
-{{anchor refid}}
+---
+date: "2019-06-27"
+layout: post
+title: {{kind}}::{{name}}
+katex: true
+categories: {{kind}}
+---
 
-## {{kind}} `{{name}}`
+{{anchor refid}}
 
 {{detaileddescription}}
 
