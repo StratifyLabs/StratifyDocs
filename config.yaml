@@ -1,7 +1,7 @@
 baseURL: 'https://docs.stratifylabs.co'
 title: Stratify Labs
 copyright: ''
-theme: minimo
+theme: engimo
 disqusShortname: ''
 googleAnalytics: 'UA-75152879-3 '
 Paginate: 50
@@ -40,7 +40,7 @@ params:
     header:
       - breadcrumbs
     homepage:
-      - recent_posts
+      - sidebar_menu
     sidebar:
       - about
       - search

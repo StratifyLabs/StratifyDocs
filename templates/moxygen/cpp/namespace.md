@@ -3,6 +3,8 @@ date: "2019-06-27"
 layout: post
 title: {{kind}}::{{name}}
 katex: true
+msc: true
+viz: true
 categories: {{kind}}
 menu:
   sidebar:
@@ -11,6 +13,15 @@ menu:
 ---
 
 {{anchor refid}}
+
+{{#if basecompoundref}}
+```cpp
+{{kind}} {{name}}
+  {{#each basecompoundref}}
+  : {{prot}} {{name}}
+  {{/each}}
+```  
+{{/if}}
 
 {{detaileddescription}}
 
@@ -29,7 +40,7 @@ menu:
 ### {{title proto}}
 
 {{#if enumvalue}}
-{{#each enumvalue}}- {{cell name}} {{cell summary}}
+{{#each enumvalue}}- `{{cell name}}` {{cell summary}}
 {{/each}}
 {{/if}}
 
