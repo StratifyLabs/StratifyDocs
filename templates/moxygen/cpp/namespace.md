@@ -37,7 +37,7 @@ menu:
 {{#each filtered.members}}
 {{anchor refid}}
 
-### {{title proto}}
+##### {{title proto}}
 
 {{#if enumvalue}}
 {{#each enumvalue}}- `{{cell name}}` {{cell summary}}
