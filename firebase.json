@@ -6,16 +6,17 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [{
-      "source": "",
-      "destination": "guides/Documentation/",
-      "type": 301
-    },
+    "redirects": [
       {
-      "source": "StratifyOS/*/docs/StratifyOS/undefined.md#group__errno",
-      "destination": "StratifyOS/errno/",
-      "type": 301
-    }
+        "source": "/",
+        "destination": "guides/Documentation/",
+        "type": 301
+      },
+      {
+        "source": "StratifyOS/*/docs/StratifyOS/undefined.md#group__errno",
+        "destination": "StratifyOS/errno/",
+        "type": 301
+      }
     ]
   }
 }

@@ -12,11 +12,11 @@ menu:
 
 Stratify OS sockets are based on BSD sockets and implement the POSIX API. The StratifyAPI library provide easy-to-use classes for programming sockets:
 
-- [inet::Socket]() allows for direct access to connect(), listen(), bind(), read(), write(), socket(), and close()
-- [inet::SecureSocket]() is the same as inet::Socket but runs over TLS
-- [inet::HttpClient] implements portions of the HTTP protocol to easily download files and interact with REST APIs
+- [inet::Socket]({{< relref "inet-Socket.md">}}) allows for direct access to connect(), listen(), bind(), read(), write(), socket(), and close()
+- [inet::SecureSocket]({{< relref "inet-SecureSocket.md">}}) is the same as inet::Socket but runs over TLS
+- [inet::HttpClient]({{< relref "inet-HttpClient.md">}}) implements portions of the HTTP protocol to easily download files and interact with REST APIs
 
-Stratify OS also includes [var::Json]() data handling to easily transact data with web applications.
+Stratify OS also includes [var::Json]({{< relref "var-JsonValue.md">}}) data handling to easily transact data with web applications.
 
 ## Under the Hood
 
@@ -24,8 +24,8 @@ Applications don't actually include the TCP/IP/TLS software stack. That code is 
 
 As an application developer, the only thing to worry about is whether the hardware and OS package support sockets or not. This can be done with the following code snippet using the StratifyAPI.
 
-```
-#include <sapi.sys.hpp>
+```cpp
+#include <sapi/sys.hpp>
 
 if( Sys::is_socket_api_available() == true ){
     printf("this board has sockets!\n");
@@ -36,6 +36,69 @@ if( Sys::is_secure_socket_api_available() == true ){
 }
 ```
 
+## OS Implementations
+
+The implementation varies by hardware. One example is running the LWIP TCP/IP stack on the chip and connecting via ethernet.
+
+```
+       Stratify OS
++------------------------+
+|                        |
+|      Socket API        |
+|                        |
++------------------------+
+|                        |
+|     LWIP TCP/IP        |
+|                        |
++------------------------+
+|                        |
+|     Ethernet Driver    |
+|                        |
++------------------------+
+```
+
+Another approach is to use a WIFI module that is running it's own TCP/IP stack and use a serial connection to connect to the TCP/IP stack running on the WIFI module.
+
+```
+      Stratify OS
++----------------------+
+|                      |                 Wifi Module                  
+|     Socket API       | +-------> +----------------------+
+|                      |    SPI    |                      |
++----------------------+ <-------+ |    Serial Protocol   |
+                                   |                      |
+                                   +----------------------+
+                                   |                      |
+                                   |    TCP/IP Stack      |
+                                   |                      |
+                                   +----------------------+
+                                   |                      |
+                                   |    Wifi Driver       |
+                                   |                      |
+                                   +----------------------+
+
+```
+
+Or use a cellular module with a built-in TCP/IP stack.
+
+```
+      Stratify OS
++-----------------------+ 
+|                       |                  Cellular Module
+|     Socket API        | +---------> +----------------------+
+|                       |   UART      |                      |
++-----------------------+ <---------+ |    Serial Protocol   |
+                                      |                      |
+                                      +----------------------+
+                                      |                      |
+                                      |    TCP/IP Stack      |
+                                      |                      |
+                                      +----------------------+
+                                      |                      |
+                                      |    Wifi Driver       |
+                                      |                      |
+                                      +----------------------+
+```
 # The SNTP Application
 
 Syncing your device's time with internet time is a great example of using sockets. Of course, Stratify OS has a pre-built application that you can simply install and run in order to accomplish this. But since we want to understand socket programming we will do it the hard way.  The following code snippet is actually taken from the sntp application source code.
