@@ -23,7 +23,7 @@ categories: {{kind}}
 
 {{#if filtered.members}}
 
-### Methods
+### Members
 
 {{#each filtered.members}}###### {{cell proto}}
 

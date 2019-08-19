@@ -74,12 +74,12 @@ sl app.build:path=HelloWorld app.install:path=HelloWorld,run,terminal
 
 If you are brand new to Stratify OS, these guides are a good place to start. Stratify OS is not like any other microcontroller operating system in existence.
 
-- [Stratify OS Overview](/guides/Guide-Stratify-OS/)
-- [Understanding Stratify OS on the ARM Cortex M Architecure](/guides/Guide-ARM-Cortex-M/)
-- [Understanding Device Drivers](/guides/Guide-Device-Drivers/)
-- [Understanding Device Drivers](/guides/Guide-Device-Drivers/)
-- [Understanding Filesystems](/guides/Guide-Filesystems/)
-- [Understanding Threads](/guides/Guide-Threads/)
+- [Stratify OS Overview]({{< relref "Guide-Stratify-OS.md" >}})
+- [Understanding Stratify OS on the ARM Cortex M Architecure]({{< relref "Guide-ARM-Cortex-M.md" >}})
+- [Understanding Device Drivers]({{< relref "Guide-Device-Drivers.md" >}})
+- [Understanding Filesystems]({{< relref "Guide-Filesystems.md" >}})
+- [Understanding Sockets]({{< relref "Guide-Sockets.md" >}})
+- [Understanding Threads]({{< relref "Guide-Threads.md" >}})
 
 ## sl Manual
 
@@ -89,14 +89,14 @@ The `sl` command line tool is used to manage Stratify OS applications, data, and
 
 Stratify OS applications can be built using the StratifyAPI library which is an embedded friendly C++ library for many POSIX and standard C library functions. Or they can be built using direct calls to POSIX and standard C library functions.
 
-- [Stratify API Reference](../StratifyAPI/)
-- [POSIX pthread Reference](../StratifyOS/pthread/)
-- [POSIX unistd Reference](../StratifyOS/unistd/)
-- [POSIX dirent Reference](../StratifyOS/directory/)
-- [POSIX time Reference](../StratifyOS/time/)
-- [POSIX signals Reference](../StratifyOS/signal/)
-- [POSIX semaphore Reference](../StratifyOS/semaphore/)
-- [POSIX mqueue Reference](../StratifyOS/mqueue/)
-- [Standard C Library Reference](../StratifyOS/stdc/)
-- [Error Numbers Reference](../StratifyOS/errno/)
+- [Stratify API Reference]({{< relref "reference/StratifyAPI/api.md" >}})
+- [POSIX pthread Reference]({{< relref "reference/StratifyOS/pthread.md" >}})
+- [POSIX unistd Reference]({{< relref "reference/StratifyOS/unistd.md" >}})
+- [POSIX dirent Reference]({{< relref "reference/StratifyOS/directory.md" >}})
+- [POSIX time Reference]({{< relref "reference/StratifyOS/time.md" >}})
+- [POSIX signals Reference]({{< relref "reference/StratifyOS/signal.md" >}})
+- [POSIX semaphore Reference]({{< relref "reference/StratifyOS/semaphore.md" >}})
+- [POSIX mqueue Reference]({{< relref "reference/StratifyOS/mqueue.md" >}})
+- [Standard C Library Reference]({{< relref "reference/StratifyOS/stdc.md" >}})
+- [Error Numbers Reference]({{< relref "reference/StratifyOS/errno.md" >}})
 
