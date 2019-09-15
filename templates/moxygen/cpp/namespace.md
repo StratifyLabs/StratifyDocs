@@ -25,10 +25,7 @@ menu:
 
 {{detaileddescription}}
 
-{{#each filtered.members}} {{cell proto}}  
-
-{{/each}}{{#each filtered.compounds}} {{cell proto}}  
-
+{{#each filtered.compounds}}- {{cell proto}}  
 {{/each}}
 
 {{#if filtered.members}}

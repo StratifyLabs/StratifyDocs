@@ -23,16 +23,16 @@ categories: {{kind}}
 
 {{#if filtered.members}}
 
-### Members
+### Summary
 
-{{#each filtered.members}}###### {{cell proto}}
+{{#each filtered.members}} {{cell proto}}
 
-{{/each}}{{#each filtered.compounds}}###### {{cell proto}}
+{{/each}}{{#each filtered.compounds}} {{cell proto}}
 
 {{/each}}
 
 
-### Details
+### Members
 
 {{#each filtered.compounds}}
 {{anchor refid}}
@@ -53,6 +53,7 @@ categories: {{kind}}
 {{#if enumvalue}}
 {{#each enumvalue}}- `{{cell name}}` {{cell summary}}
 {{/each}}
+
 {{/if}}
 
 {{detaileddescription}}

@@ -1,0 +1,20 @@
+{
+    "markdown": [
+        { 
+            "input": "content/reference/StratifyAPI", 
+            "output": "../StratifyDocsCode/StratifyAPI",
+            "template": "md2code/cpp",
+            "buildDirectory": "cmake_arm",
+            "cmakeOptions": "",
+            "makeOptions": "-j8"
+        },
+        { 
+            "input": "content/reference/StratifyOS", 
+            "output": "../StratifyDocsCode/StratifyOS",
+            "template": "md2code/cpp",
+            "buildDirectory": "cmake_arm",
+            "cmakeOptions": "",
+            "makeOptions": "-j8"
+        }
+    ]
+}
